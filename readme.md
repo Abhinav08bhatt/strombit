@@ -1,10 +1,15 @@
-# stormbit version 1.0 'strombit.py`
+# `stormbit.py`
+Solution for the [weather-api](https://roadmap.sh/projects/weather-api-wrapper) challenge from [roadmap.sh](https://roadmap.sh).
 
-Solution for the [weather-api](https://roadmap.sh/projects/weather-api-wrapper-service) challenge from [roadmap.sh](https://roadmap.sh/).
+A command-line weather application built in Python that fetches real-time weather data using the Visual Crossing API.  
+Supports **current weather**, **hourly forecast**, **7-day forecast**, and **location handling** with a simple menu-based interface.
+
+---
 
 ## How to run
 
-Clone the repository and run the following command:
+Clone the repository and run:
+
 ```bash
 git clone https://github.com/Abhinav08bhatt/stormbit.git
 ```
@@ -12,66 +17,61 @@ git clone https://github.com/Abhinav08bhatt/stormbit.git
 cd stormbit
 ```
 ```bash
-python strombit.py
+python main.py
 ```
 
-## Required module
-
+### Required module:
 ```bash
 pip install requests
 ```
 
-## Supported Actions (menu-based)
-- Save a new location (a)
-- View weather of a saved location (b)
-- Change default location (c)
-- View present weather (d)
-- View the weather of the whole day (e)
-- View the weather for the next 7 days (f)
+---
 
-## Features in version 1.0
-### Weather Data
-- Current temperature, feels-like temperature
-- Max / Min / Average temperature for the day
-- Humidity, UV index, visibility
-- Conditions (Clear, Cloudy, Rain, etc.)
-### Today’s Hourly Forecast
-- Temperature and feels-like
-- Rain probability
-- Wind speed
-- UV index
-- Cloud cover
-### 7-Day Forecast
-- Daily high and low
-- Conditions
-- Rain probability
-- Humidity and wind speed
-- Sunrise and sunset
-### Location Management
-- Default location support
-- Save multiple locations
-- View saved locations
-- Query any saved location
+## Version Info:
 
-## Data Structure used in version 1.0
+<details><summary><strong>Version 1.0</strong> (latest)</summary>
 
-`saved_locations.json`
+### Features
+- Current weather report  
+- Hourly forecast for today  
+- 7-day forecast  
+- Location management:
+  - Save a location  
+  - Set default location  
+  - View all saved locations  
+
+### Supported actions (menu-based)
+- Save a new location (`a`)
+- View data of a saved location (`b`)
+- Change default location (`c`)
+- Present weather (`d`)
+- Weather of whole day (`e`)
+- Weather for next 7 days (`f`)
+
+### Data Structure used in version 1.0
+
+#### `saved_locations.json`
 ```json
 {
     "default": "dehradun",
-    "saved": [
-        "mumbai",
-        "delhi"
-    ]
+    "saved": ["mumbai","delhi"]
 }
 ```
-`cache.json`
-- Stores the last successful weather API response in case of errors.
+
+#### `cache.json`
+Stores last successful response from the API.
+
+</details>
+
+
+---
 
 ## API Used
+**Visual Crossing Weather API**  
+(Free tier — requires an API key)
 
-Weather data is fetched from Visual Crossing Weather API (Free tier, requires an API key)
-in `strombit.py` line 8
-```python
-API_KEY = "YOUR API HERE"
-```
+---
+
+## License
+This project is open-source and available under the MIT license.
+
